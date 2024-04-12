@@ -1,0 +1,42 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+  width: 100%;
+  height: 100%;
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  button,
+  mat-form-field {
+    width: -webkit-fill-available;
+  }
+  button {
+    margin: 5px 0;
+
+    &[mat-button] {
+      background-color: #3cf436;
+      color: white;
+      font-weight: bold;
+      &:hover {
+        background-color: #4a2fd3;
+      }
+    }
+  }
+
+  .aligned-to-right {
+    text-align: right;
+    width: 100%;
+  }
+}
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: whitesmoke;
+}
