@@ -10,9 +10,11 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { LoginModule } from './budget-planner/login/login.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    LoginModule,
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp({

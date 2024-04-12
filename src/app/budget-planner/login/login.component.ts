@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,14 +7,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-  form!: FormGroup;
+  myForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor( @Inject('formBuilder')private formBuilder: FormBuilder) {
+    
+  }
 
   ngOnInit(): void {
-    this.form = this.formBuilder.group({
+    this.myForm = this.formBuilder.group({
       email: ['', Validators.email],
-      password: [''],
+      password: ['',Validators.required],
     });
   }
 }
