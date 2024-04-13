@@ -9,13 +9,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent {
   myForm!: FormGroup;
 
-  constructor( @Inject('formBuilder')private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder) {
     
   }
 
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
-      email: ['', Validators.email],
+      email: ['', [Validators.email,Validators.required]],
       password: ['',Validators.required],
     });
   }
